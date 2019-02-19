@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+        
+        .wrap {
+            width: 200px;
+            height: 500px;
+            margin: 0 auto;
+        }
+        
+        .list {
+            width: 100%;
+            height: 30px;
+        }
+        
+        .list>li {
+            display: inline-block;
+            width: 60px;
+            height: 30px;
+            border: 1px solid #ccc;
+        }
+        
+        .move {
+            background: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <ul class='list'>
+            <li>未使用</li>
+            <li>已使用</li>
+            <li>已过期</li>
+        </ul>
+    </div>
+    <script>
+        var lis = [...document.querySelectorAll('li')];
+        document.querySelector('.list').onclick = function(e) {
+            for (let i = 0; i < lis.length; i++) {
+                lis[i].classList.remove('move')
+            }
+            e.target.classList.add('move');
+        }
+    </script>
+</body>
+
+</html>
